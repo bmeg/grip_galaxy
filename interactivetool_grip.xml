@@ -1,0 +1,31 @@
+<tool id="interactive_tool_grip" tool_type="interactive" name="GRaph Integration Platform" version="0.1">
+    <requirements>
+        <container type="docker">grip_galaxy</container>
+    </requirements>
+    <entry_points>
+        <entry_point name="GRIP" requires_domain="True">
+            <port>8888</port>
+        </entry_point>
+    </entry_points>
+    <environment_variables>
+        <environment_variable name="USER_GID">2345</environment_variable>
+        <environment_variable name="USER_UID">2345</environment_variable>
+        <environment_variable name="MONITOR_TRAFFIC">false</environment_variable>
+    </environment_variables>
+    <command><![CDATA[
+bash /grip_entrypoint.sh $sifterplan $graph_name
+    ]]>
+    </command>
+    <inputs>
+      <param name="sifterplan" type="data" label="Sifter File"/>
+      <param type="text" name="graph_name" value="graph"/>
+    </inputs>
+    <outputs>
+        <data name="outfile" format="txt" />
+    </outputs>
+    <tests>
+    </tests>
+    <help>
+      GRIP is designed to integratate datasets into queriable graphs.
+    </help>
+</tool>
