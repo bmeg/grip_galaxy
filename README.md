@@ -79,7 +79,7 @@ docker build -t grip_galaxy .
 
 ## Test deployment
 
-Configure Galaxy to allow for interactive tools:
+Configure Galaxy, in the file `config/galaxy.yml` to allow for interactive tools:
 ```yaml
 uwsgi:
   http: localhost:8080
