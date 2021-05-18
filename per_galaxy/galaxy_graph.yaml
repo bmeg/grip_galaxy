@@ -1,0 +1,26 @@
+
+sources:
+  galaxyServer:
+    host: localhost:50051
+
+vertices:
+  "history:" :
+    source: galaxyServer
+    label: History
+    collection: histories
+
+  "dataset:" :
+    source: galaxyServer
+    label: Dataset
+    collection: datasets
+
+edges:
+  hda:
+    fromVertex: "history:"
+    toVertex: "dataset:"
+    label: datasets
+    edgeTable:
+      source: galaxyServer
+      collection: hda
+      fromField: $.history_id
+      toField: $.dataset_id

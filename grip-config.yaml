@@ -1,0 +1,11 @@
+
+Default: badger
+
+Drivers:
+
+  badger:
+    Badger: grip.db
+  galaxy-driver:
+    Gripper:
+      ConfigFile: ./per_galaxy/galaxy_graph.yaml
+      Graph: galaxy
